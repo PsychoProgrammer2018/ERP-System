@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+                <link rel="stylesheet" href="Style.css">
+               <script type="text/javascript" src="jquery-3.3.1.min.js"> 
+               </script>
+            </head>
+    <body >
+            
+            <form   style="align-content: center " id="sinup_form">
+
+                    <br><input type="text" class="form-control"  name="Name" id="Name" placeholder="Name" style="margin-left: auto;
+                    margin-right: auto; width: 80%;"><br>
+                    <input type="text" class="form-control"  name="Roll_No" id="Roll_No" placeholder="Roll No." style="margin-left: auto;
+                    margin-right: auto; width: 80%;"><br>
+                    <input type="email" class="form-control"   name="Email"  id="Email"  placeholder="Email Id" style="margin-left: auto;
+                    margin-right: auto; width: 80%;"><br>
+                    <input type="number" class="form-control"  name="Phone" id="Phone" placeholder="Contact No." style="margin-left: auto;
+                    margin-right: auto; width: 80%;"><br>
+                    <select id="Branch"  class="btn btn-secondary dropdown-toggle" style="width: 80%; margin-left:10%; border:2px solid  #E0E0E0; color: #969292 "  >
+                                            <option value="Trade">Trade</option>
+                                            <option value="CSE">CSE</option>
+                                            <option value="ECE">ECE</option>
+                                            </select><br><br>
+                    <input type="password" class="form-control"  name="Password"  id="Password" placeholder="Password" style="width: 80%;margin-left: auto;
+                    margin-right: auto;"><br>
+                    <input type="password" class="form-control"  name="Confirm_Password" id="Confirm_Password" placeholder="Confirm Password:" style="width: 80%;margin-left: auto;
+                    margin-right: auto;"><br>
+                    <input type="hidden" name="hidden" id="hidden" >
+                    <input type="submit"  class="form-control" value="Submit" name="Submit" id="Submit" style="width:80%;margin-left: auto;
+                    margin-right: auto;color:#ffffff;background-color:#000000  ">
+                
+            </form>   
+           <script type="text/javascript" >
+         
+       
+    
+      $(document).ready(function(){
+    	  $("#sinup_form").submit(function(e){
+    		  e.preventDefault();
+    	  });
+    		$("#Submit").click(function(){
+    			
+    			
+    			var Name=$("#Name").val();
+    			var Roll=$("#Roll_No").val();
+    			var Email=$("#Email").val();
+    			
+    			if(!name.search(/[^a-zA-Z]+/)){
+    				alert("Invalid Name ");
+    				return;
+    			}
+    			if(Roll==''){
+    				alert(" Roll No. cannot be Null")
+    			return;
+    			}
+    			if(Email==''){
+    				alert("Email Id cannot be Null.")
+        			return;
+        			}
+    			var Phone=0;
+    			Phone=parseInt($("#Phone").val());
+    			if(Phone<=999999999){
+    				alert("Invalid Phone Number");
+    				
+    				return;
+    			}
+    			var Password=$('#Password').val();
+    			var Confirm_Pass=$('#Confirm_Password').val();
+    			if(Password!=Confirm_Pass){
+    				alert("Password Didn't Match");
+    				return;
+    			}
+    			var x=  document.getElementById("Branch").selectedIndex;
+    			var y= document.getElementById("Branch").options;
+    			var Branch=y[x].text;
+    		$.ajax(
+    		{
+    		
+    			type:"post",
+    			url:'signup',
+    		    data:"Name="+Name+"&Roll_No="+Roll+"&Email="+Email+"&Phone="+Phone+"&Password="+Password+"&Branch="+Branch,
+         		error:function(e){
+                alert("error");},
+    	    	success:function(data){
+                alert(data);
+                if(data=="User Added Successfully"){
+                window.location.replace("login.html");}
+                }   
+    		});	
+    		});
+    		
+    	});
+           </script>
+    </body>
+</html>

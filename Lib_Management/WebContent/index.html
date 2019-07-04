@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Style.css">
+   </head>
+    <body>
+
+        <button type="button" class="btn btn-link" onclick="display()">Work_Bench</button>
+        <div class="bg-modal" id="bg">
+                <div class="model-content">
+                    <a href="login.html"  style="font-size: 20px;
+                    font-weight: 300;" target="lgn_sig_frame">Login</a>
+                    &nbsp;&nbsp;
+                    <a href="Signup.html" style="font-size: 20px;
+                    font-weight: 300;" target="lgn_sig_frame">Signup</a>
+                        <button id="close"  class="btn btn-link" onclick=clse()>X</button><br><br>
+                    <iframe src="login.html" style=" width:80%;
+                    height:450px;" frameborder=0 name="lgn_sig_frame">
+                    
+                </iframe>
+                            
+            </div>
+
+        </div>
+        <script type="text/javascript" >
+        function display(){       	
+    var c=document.cookie.split(";")  ;
+    var c1=c[0].split("=");
+    if(c1[1]==""){
+    var modal=document.getElementById('bg');
+    modal.style.display="flex";
+    }
+    else{
+    	
+    	window.location.assign("Student_Workbench");
+    }
+}
+function clse(){
+ 
+    var modal=document.getElementById('bg');
+    modal.style.display='none';
+}
+        </script>
+    </body>
+    
+</html>

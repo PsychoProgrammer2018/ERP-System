@@ -1,0 +1,46 @@
+<html>
+  <script src="jquery-3.3.1.min.js"></script>
+    <body>
+    <from id="form">
+    <input type="text" id="Id">
+    <input type="password" id="Password">
+    <input type="Submit" value="Submit" id="Submit">
+    </from>
+       <script type="text/javascript">
+       $(document).ready(
+    		function(){
+           $("#form").submit(
+               function(e){
+                e.preventDefault();
+               }
+           );     
+           function(){
+       var Id=$("#Id").val();
+       if(id==""){
+    	   alert("ID Filed id Empty");
+    	   return;
+       }
+       var Password=$("#Password").val();
+       if(Password==""){
+    	   alert("Passwoed Field is empty");
+    	   return;
+       }
+      $.ajax(
+    	type:"post",
+    	url:"login",
+    	data:"Id="+Id+"&Password="Password,
+    	success:function(data){
+    		alert("success");
+            https://coderanch.com/t/414179/java/session-destroyed-browser-closed
+    	//window.location.replace("Student_Workbench.jsp");	
+    	}
+      error:function(){
+    	  alert("Error Loading Page");
+      }
+      ); 
+       });
+            });
+       </script>
+     
+    </body>
+</html>
