@@ -14,30 +14,31 @@
                 e.preventDefault();
                }
            );     
-           $("#Submit").click(function(){
+           function(){
        var Id=$("#Id").val();
-       if(Id==""){
+       if(id==""){
     	   alert("ID Filed id Empty");
     	   return;
        }
        var Password=$("#Password").val();
        if(Password==""){
-    	   alert("Password Field is empty");
+    	   alert("Passwoed Field is empty");
     	   return;
        }
-      $.ajax({
+      $.ajax(
     	type:"post",
     	url:"login",
-    	data:"Id="+Id+"&Password="+Password,
+    	data:"Id="+Id+"&Password="Password,
     	success:function(data){
-    		window.open('Student_Workbench','_top');
-    		
-    	},
+    		alert("success");
+            https://coderanch.com/t/414179/java/session-destroyed-browser-closed
+    	//window.location.replace("Student_Workbench.jsp");	
+    	}
       error:function(){
     	  alert("Error Loading Page");
       }
-      }); 
-           });
+      ); 
+       });
             });
        </script>
      
