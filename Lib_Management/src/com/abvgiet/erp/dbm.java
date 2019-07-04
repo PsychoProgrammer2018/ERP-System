@@ -2,14 +2,18 @@ package com.abvgiet.erp;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.ResultSet;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 
 abstract public class dbm {
 PreparedStatement ps;
+Statement st;
 Connection con;
 String query;
-
+ResultSet rs;
 public void connect() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
