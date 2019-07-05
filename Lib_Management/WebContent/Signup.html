@@ -7,12 +7,6 @@
                </script>
             </head>
     <body >
-	dir id="loading"></dir>
-		 <script type="text/javascript"> 
-        
-document.getElementById("loading").style.display="none";
-         </script>
-
             
             <form   style="align-content: center " id="sinup_form">
 
@@ -82,7 +76,7 @@ document.getElementById("loading").style.display="none";
     			var y= document.getElementById("Branch").options;
     			var Branch=y[x].text;
     		$.ajax(
-    		{document.getElementById("loading").style.display="flex";
+    		{
     		
     			type:"post",
     			url:'signup',
@@ -92,7 +86,6 @@ document.getElementById("loading").style.display="none";
     	    	success:function(data){
                 alert(data);
                 if(data=="User Added Successfully"){
-				document.getElementById("loading").style.display="none";
                 window.location.replace("login.html");}
                 }   
     		});	

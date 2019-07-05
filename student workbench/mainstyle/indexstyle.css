@@ -18,7 +18,7 @@ body{
     border-color: white;
     border-style: solid;
     border-width: 4px;
-    top: 30px;
+    top: 0px;
     width: 120px;
     height: 120px;
     
@@ -29,8 +29,8 @@ body{
 }
 .top-info-detail{
     position: absolute;
-    top: 50px;
-    left:140px;
+    top: 130px;
+    left:0px;
     margin-left: 10px;
     max-width: 340px;
     font-size: 30px;
@@ -42,13 +42,13 @@ body{
     right:0px;
     top:0px;
     display: block;
-    /*margin-right: 4px;*/
     height: auto;
     width: 600px;
 }
 .gknav{
   position: relative;
   right: 0px;
+  padding:20px;
   float:right;
   padding-top:12px;
 }
@@ -65,8 +65,9 @@ body{
 }
 .gknav a:hover{
   text-decoration: none;
-  padding:20px;
+  padding-top: 30px;
   background-color: #35a2db; 
+  transition: .5s ease;
 }
 
 .top-info-logo{
@@ -75,7 +76,7 @@ body{
     color:white;
 }
 .top-info-logo p{
-    margin-left: 50%;
+    margin-left: 45%;
     margin-top: 90px;
 }
 
@@ -173,8 +174,10 @@ body{
 
   iframe{
       position: absolute;
+      margin:0;
+      padding: 0px;
+      overflow: hidden;
       height: 100%;
-      margin: 0px;
       width: 100%;
       z-index: -1;
       border-style: none;
@@ -187,10 +190,5 @@ body{
     position: absolute;
 
   }
-  #tt{
-    position: absolute;
-    bottom:0px;
-    padding-left:60px;
-  }
-  
+
   
