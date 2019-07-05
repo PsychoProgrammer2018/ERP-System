@@ -25,7 +25,13 @@
         </div>
         <script type="text/javascript" >
         function display(){       	
-    var c=document.cookie.split(";")  ;
+    var c=document.cookie;
+    var x=c.split(";")  ;
+   if(x.length==1){
+	   var modal=document.getElementById('bg');
+	    modal.style.display="flex";
+    }
+    else{
     var c1=c[0].split("=");
     if(c1[1]==""){
     var modal=document.getElementById('bg');
@@ -34,6 +40,7 @@
     else{
     	
     	window.location.assign("Student_Workbench");
+    }
     }
 }
 function clse(){
