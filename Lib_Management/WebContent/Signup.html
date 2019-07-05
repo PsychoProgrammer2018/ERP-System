@@ -7,10 +7,9 @@
                </script>
             </head>
     <body >
-	dir id="loading"></dir>
+	<div id="loading"></div>
 		 <script type="text/javascript"> 
-        
-document.getElementById("loading").style.display="none";
+        document.getElementById("loading").style.display="none";
          </script>
 
             
@@ -81,10 +80,9 @@ document.getElementById("loading").style.display="none";
     			var x=  document.getElementById("Branch").selectedIndex;
     			var y= document.getElementById("Branch").options;
     			var Branch=y[x].text;
+    			document.getElementById("loading").style.display="flex";
     		$.ajax(
-    		{document.getElementById("loading").style.display="flex";
-    		
-    			type:"post",
+    		{   type:"post",
     			url:'signup',
     		    data:"Name="+Name+"&Roll_No="+Roll+"&Email="+Email+"&Phone="+Phone+"&Password="+Password+"&Branch="+Branch,
          		error:function(e){
@@ -94,7 +92,7 @@ document.getElementById("loading").style.display="none";
                 if(data=="User Added Successfully"){
 				document.getElementById("loading").style.display="none";
                 window.location.replace("login.html");}
-                }   
+                }  
     		});	
     		});
     		
