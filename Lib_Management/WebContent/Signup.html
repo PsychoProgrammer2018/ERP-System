@@ -82,13 +82,7 @@
     			var Branch=y[x].text;
     			document.getElementById("loading").style.display="flex";
     		$.ajax(
-
     		{   type:"post",
-
-    		{
-    		
-    			type:"post",
-
     			url:'signup',
     		    data:"Name="+Name+"&Roll_No="+Roll+"&Email="+Email+"&Phone="+Phone+"&Password="+Password+"&Branch="+Branch,
          		error:function(e){
@@ -96,6 +90,7 @@
     	    	success:function(data){
                 alert(data);
                 if(data=="User Added Successfully"){
+				document.getElementById("loading").style.display="none";
                 window.location.replace("login.html");}
                 }  
     		});	
