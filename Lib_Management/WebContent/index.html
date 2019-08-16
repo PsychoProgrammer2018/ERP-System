@@ -5,10 +5,8 @@
     <link rel="stylesheet" href="Style.css">
    </head>
     <body>
-    <form action="anno" >
-<
-</form>
-        <button type="button" class="btn btn-link" onclick="display()">Login</button>
+
+        <button type="button" class="btn btn-link" onclick="display()">Work_Bench</button>
         <div class="bg-modal" id="bg">
                 <div class="model-content">
                     <a href="login.html"  style="font-size: 20px;
@@ -26,16 +24,16 @@
 
         </div>
         <script type="text/javascript" >
-
         function display(){       	
     var c=document.cookie;
     var x=c.split(";")  ;
-   if(x.length==1){
+   if(x.length<2){
 	   var modal=document.getElementById('bg');
 	    modal.style.display="flex";
     }
     else{
-    var c1=c[0].split("=");
+    var c1=x[0].split("=");
+    alert(c1[1]);
     if(c1[1]==""){
     var modal=document.getElementById('bg');
     modal.style.display="flex";
@@ -45,10 +43,6 @@
     	window.location.assign("Student_Workbench");
     }
     }
-        function display(){
-    var modal=document.getElementById('bg');
-    modal.style.display="flex";
-
 }
 function clse(){
  
